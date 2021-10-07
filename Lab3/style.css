@@ -56,6 +56,16 @@ body {
   width: 100%;
   overflow: visible;
 }
+.imageBox3 {
+  position: absolute;
+  left: 295px;
+  bottom: 1px;
+}
+.imageBox4 {
+  position: absolute;
+  left: 5px;
+  bottom: 1px;
+}
 .profileText .imgBox img {
   position: absolute;
   top: 0;
