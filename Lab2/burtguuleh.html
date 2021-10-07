@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        body{
+        border: 2px solid black;
+        padding: 100px;
+        font-family: 'Roboto', sans-serif;
+        background: url(Image/Background.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        }
+    </style>
 <head>
-	<title></title>
+	<title>Нэвтрэх хэсэг</title>
 </head>
-<body background="Lab2\pexels-pixabay-373076.jpg">
+<body id="body">
 	<center>
 		<table border="1px" cellpadding="50">
 			<tr>
@@ -21,6 +31,7 @@
                         <label for="Gender1" >Эр</label>
                         <input type="radio" id="Gender2" name="Huis" value="female">
                         <label for="Gender2" >Эм</label><br> <br>
+                        Төрсөн өдөр:<input type="date" name="datetime"> <br> <br>
                         Оршин суугаа газар:<select>
                             <option>Дархан</option>
                             <option>Улаанбаатар</option>
@@ -35,10 +46,19 @@
                         </select><br><br>
                         Утасны дугаар: <input type="number" name="number" placeholder="Утасны дугаараа оруулна уу"><br><br>
                         Мэйл хаяг: <input type="email" name="email" placeholder="Мэйл хаягаа оруулна уу"><br><br>
+                        Манайхыг хаанаас мэдсэн бэ? <br> <br>
+						<input type="checkbox" id="Online" name="Net">
+						<label for="Online">Интернэт</label> &nbsp;
+						<input type="checkbox" id="Social" name="Social">
+						<label for="Social">Цахим сүлжээ</label> &nbsp;
+						<input type="checkbox" id="Listen" name="listen">
+						<label for="Listen">Хүнээс сонссон</label> <br> <br>
                         <center>
-                            <button onclick="location.href='http://127.0.0.1:5500/Lab2/main.html#'" type="button">
-                                Бүртгүүлэх</button>
+                            <input type="reset" value="Устгах">
+                            <button onclick="location.href='burtguuleh.html'" type="button">
+                                Бүртгүүлэх</button><br> <br>
                         </center>
+                        <center><img id="bigpic" src="https://media3.giphy.com/media/xUPGGDNsLvqsBOhuU0/giphy.gif?cid=ecf05e47633u4y9kennc9ttdwrww2rmno1lu9sixzf9jgay6&rid=giphy.gif&ct=g" style="display:visible;"/></center>
 					</form>
 				</td>
 			</tr>
