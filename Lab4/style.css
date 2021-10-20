@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+body {
+  background-color: #1b1b6c;
+}
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+}
+.viewing {
+  clear: left;
+  float: left;
+  width: 100%;
+  height: 280px;
+  background-color: #13124f;
+  margin-left: 0px;
+}
+.vh1 {
+  color: white;
+  font-size: 40px;
+  margin-top: 60px;
+  margin-left: 55px;
+  margin-bottom: 5px;
+}
+.vh2 {
+  color: white;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-left: 55px;
+}
+.vh3 {
+  color: white;
+  font-size: 12px;
+  margin-top: 6px;
+  text-align: center;
+}
+.vh4 {
+  color: white;
+  font-size: 12px;
+  margin-top: 8px;
+  text-align: center;
+}
+.vh5 {
+  color: white;
+  font-size: 18px;
+  margin-top: 11px;
+  margin-left: 15px;
+}
+.learn {
+  clear: left;
+  float: left;
+  width: 9%;
+  height: 25px;
+  background-color: #f61067;
+  margin-left: 55px;
+}
+.smess {
+  clear: left;
+  float: left;
+  width: 98%;
+  height: 30px;
+  background-color: #f61067;
+  margin-top: 20px;
+}
+.content {
+  clear: left;
+  float: left;
+  width: 65%;
+  height: 710px;
+  background-color: white;
+}
+.news {
+  margin-top: 55px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 40px;
+}
+.h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.h2 {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+.sidebar {
+  float: left;
+  width: 35%;
+  height: 710px;
+  background-color: white;
+}
+.greybar {
+  width: 100%;
+  height: 30px;
+  background-color: #9090a5;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.grey1 {
+  clear: left;
+  float: left;
+  width: 98%;
+  height: 40px;
+  background-color: #9090a5;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.dpu {
+  clear: left;
+  float: left;
+  width: 98%;
+  height: 180px;
+  background-color: #13124f;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.footer {
+  clear: left;
+  float: left;
+  width: 100%;
+  height: 40px;
+  background-color: #1b1b6c;
+}
+.hfo {
+  color: white;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 55px;
+}
+.dput {
+  color: white;
+  font-size: 15px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.lpu1 {
+  clear: left;
+  float: left;
+  width: 93%;
+  height: 30px;
+  background-color: #1b1b6c;
+  margin-top: 0px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.dput1 {
+  color: #9090a5;
+  font-size: 15px;
+  margin-top: 7px;
+  margin-left: 15px;
+}
+.smess1 {
+  clear: left;
+  float: left;
+  width: 93%;
+  height: 30px;
+  background-color: #f61067;
+  margin-top: 15px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.lpu {
+  clear: left;
+  float: left;
+  width: 98%;
+  height: 30px;
+  background-color: #352ba5;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.lput1 {
+  color: white;
+  font-size: 12px;
+  margin-top: 7px;
+  text-align: center;
+}
+.dput9 {
+  color: white;
+  font-size: 15px;
+  margin-top: 7px;
+  text-align: center;
+}
+.border {
+  margin-top: 30px;
+  border: grey;
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+  height: 200px;
+}
+.bxt {
+  font-size: 15px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.grt1 {
+  color: white;
+  margin-top: 10px;
+  font-size: 13px;
+  margin-left: 15px;
+}
+
+.pink1 {
+  width: 93%;
+  height: 30px;
+  background-color: #f61067;
+  margin: 15px;
+}
+.green1 {
+  width: 93%;
+  height: 30px;
+  background-color: white;
+  border: #2ad392;
+  border-width: 2px;
+  border-style: solid;
+  margin: 15px;
+}
+.limes {
+  color: #2ad392;
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: center;
+}
+.cool {
+  color: white;
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: center;
+}
+.graph1 {
+  clear: left;
+  float: left;
+  width: 65%;
+  height: 10px;
+  background-color: #f61067;
+  margin-left: 15px;
+}
+.graph2 {
+  float: left;
+  width: 35%;
+  height: 10px;
+  background-color: #2ad392;
+  margin-right: 15px;
+}
+@media only screen and (min-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .logo {
+    display: none;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
