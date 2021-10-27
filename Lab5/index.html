@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory 5</title>
+    <style type="text/css">
+    #morning {
+			background-color: green;
+			position: absolute;
+            height: 100px;
+            width: 100px;
+			top: 0;
+			left: 0;
+			right: auto;
+		}
+    #night {
+			background-color: red;
+			position: absolute;
+            height: 100px;
+            width: 100px;
+			bottom: 0;
+			left: auto;
+			right: 0;
+		}
+    </style>
+</head>
+<body>
+    <div id="morning"></div>
+    <div id="night"></div>
+    <script>
+        var x = window.prompt('Hed dugeer asuult we?');
+        if(x==1){
+            var name = window.prompt('Hello, What is your name?');
+        function check_palindrome( str )
+            {
+                var j = str.length -1;
+                for( var i = 0 ; i < j/2 ;i++)
+                {
+                var x = str[i] ;
+                var y = str[j-i];
+                if( x != y)
+                {
+                    return false;
+                }
+                }
+                return true;
+            }
+            function is_palindrome( str )
+            {
+                var ans = check_palindrome(str);
+                if( ans == true )
+                {
+                windows.alert("Tanii ner bol Palindrome baina");
+                }
+                else
+                {
+                window.alert("Tanii ner bol Palindrome bish baina");
+                }
+            }
+            is_palindrome(name);
+        } else if (x==2){
+            var y = window.prompt('Toogoo oruulna uu?');
+            var sum=0;
+            while (y) {
+                sum += y % 10;
+                y = Math.floor(y / 10);
+            }
+            window.alert("Tsifruudiin niilber bol="+ sum);
+        } else if (x==3){
+            var s = window.prompt('Ta zaig oruulna uu? Chono and Tuulai');
+            var tsag=0;
+            var min=0;
+            tsag=Math.round(s/7);
+            min=6*(s%7);
+            window.alert("Ta "+ tsag+ " tsag "+min+ " minutiin daraa guitseh bolno.")
+        } else if (x==4){
+            var door=0;
+            var dawkhar=0;
+            var z = window.prompt('Toogoo oruulna uu?(0-108)');
+            if(0<z<=36){
+                dawkhar=Math.round(z/4);
+                door=z%4;
+                window.alert("ene ail manai bairnii 1 ortsnii "+dawkhar+" -n dawkhariin "+ door+ "-dah haalga.");    
+            }else if (36<z<=72){
+                z=z-36;
+                dawkhar=Math.round(z/4);
+                door=z%4;
+                window.alert("ene ail manai bairnii 2 ortsnii "+dawkhar+" -n dawkhariin "+ door+ "-dah haalga.");
+            }else if(72<z<=108){
+                z=z-72;
+                dawkhar=Math.round(z/4);
+                door=z%4;
+                window.alert("ene ail manai bairnii 3 ortsnii "+dawkhar+" -n dawkhariin "+ door+ "-dah haalga.");
+            }else {
+                window.alert("ene ail manai bairniih bish baina!");
+            }
+        } else if (x==5){
+            var d = new Date();
+		    var hour = d.getHours();
+            if(0<= hour <=12){
+                alert(hour);
+			    document.getElementById('morning');
+            } else{
+                alert(hour);
+                document.getElementById('night');
+            } 
+        }
+    </script>
+</body>
+</html>
