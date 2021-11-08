@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratory 5</title>
     <style type="text/css">
-    #morning {
+    .morning {
 			background-color: green;
 			position: absolute;
             height: 100px;
@@ -15,7 +15,7 @@
 			left: 0;
 			right: auto;
 		}
-    #night {
+    .night {
 			background-color: red;
 			position: absolute;
             height: 100px;
@@ -27,39 +27,23 @@
     </style>
 </head>
 <body>
-    <div id="morning"></div>
-    <div id="night"></div>
+    <div id="durs"></div>
     <script>
         var x = window.prompt('Hed dugeer asuult we?');
         if(x==1){
-            var name = window.prompt('Hello, What is your name?');
-        function check_palindrome( str )
-            {
-                var j = str.length -1;
-                for( var i = 0 ; i < j/2 ;i++)
-                {
-                var x = str[i] ;
-                var y = str[j-i];
-                if( x != y)
-                {
-                    return false;
-                }
-                }
-                return true;
-            }
-            function is_palindrome( str )
-            {
-                var ans = check_palindrome(str);
-                if( ans == true )
-                {
-                windows.alert("Tanii ner bol Palindrome baina");
-                }
-                else
-                {
-                window.alert("Tanii ner bol Palindrome bish baina");
-                }
-            }
-            is_palindrome(name);
+            const string = prompt('Neree oruulna uu: ');  
+            const value = validatePalin(string);
+            function validatePalin(str) {  
+            const len = string.length;  
+            for (let i = 0; i < len / 2; i++) {  
+                if (string[i] !== string[len - 1 - i || string.length<=1]) {  
+                window.alert("Ta yadaj 1 ees olon useg oruulaach");
+                alert( 'Tanii ner bol Palindrome bish baina');
+                break;
+        }  
+    }  
+    alert( 'Tanii ner bol Palindrome baina');  
+}  
         } else if (x==2){
             var y = window.prompt('Toogoo oruulna uu?');
             var sum=0;
@@ -70,16 +54,23 @@
             window.alert("Tsifruudiin niilber bol="+ sum);
         } else if (x==3){
             var s = window.prompt('Ta zaig oruulna uu? Chono and Tuulai');
-            var tsag=0;
-            var min=0;
-            tsag=Math.round(s/7);
-            min=6*(s%7);
-            window.alert("Ta "+ tsag+ " tsag "+min+ " minutiin daraa guitseh bolno.")
+            var tsag=0.0;
+            var min=0.0;
+            var sec=0.0;
+            tsag=((s/7).toFixed(2));
+            var tsag1=math.round(s/7);
+            min=math.round(60*((tsag-tsag1).toFixed(2)));
+            var min1=(60*((tsag-tsag1).toFixed(2)))-min;
+            sec=math.round((min1.toFixed(2))*60);
+            window.alert("Ta "+ tsag1+ " tsag "+min+ " minut "+sec+" secondiin daraa guitseh bolno.");
         } else if (x==4){
             var door=0;
             var dawkhar=0;
             var z = window.prompt('Toogoo oruulna uu?(0-108)');
-            if(0<z<=36){
+            if(z==0){
+                window.alert("Ta 0 ees ih too oruulah heregtei!");
+            }
+            else if(0<z<=36){
                 dawkhar=Math.round(z/4);
                 door=z%4;
                 window.alert("ene ail manai bairnii 1 ortsnii "+dawkhar+" -n dawkhariin "+ door+ "-dah haalga.");    
@@ -99,13 +90,15 @@
         } else if (x==5){
             var d = new Date();
 		    var hour = d.getHours();
-            if(0<= hour <=12){
+            var container='';
+            if(hour<18 && hour>6){
                 alert(hour);
-			    document.getElementById('morning');
+			    container=container+'<div class="morning"></div>';
             } else{
                 alert(hour);
-                document.getElementById('night');
+                container=container+'<div class="night"></div>';
             } 
+            document.getElementById("durs").innerHTML=container;
         }
     </script>
 </body>
