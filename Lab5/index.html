@@ -94,12 +94,16 @@
             if(hour<18 && hour>6){
                 alert(hour);
 			    container=container+'<div class="morning"></div>';
+            if(hour<12){
+                alert(hour);
+		document.getElementById('morning');
             } else{
                 alert(hour);
                 container=container+'<div class="night"></div>';
             } 
             document.getElementById("durs").innerHTML=container;
         }
+    }
     </script>
 </body>
 </html>
