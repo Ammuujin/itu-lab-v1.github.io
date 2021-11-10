@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  background-color: #000000;
+  font-family: "Overpass Mono", monospace;
+  font-size: 3rem;
+  height: 110vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#container {
+  display: grid;
+  gap: 2rem;
+  grid-template-rows: minmax(5rem, 2fr) minmax(8rem, 2fr) 2fr minmax(7rem, 1fr);
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "board board"
+    "img alph"
+    "bot bot"
+    "hint hint"
+    "footer footer";
+  width: 90vw;
+  max-width: 800px;
+  height: 90vh;
+  margin: auto;
+}
+#title {
+  grid-area: title;
+  color: red;
+  font-size: 6rem;
+  text-align: center;
+  letter-spacing: 0.8rem;
+  margin-top: auto;
+}
+#board {
+  font-size: 2.5rem;
+  grid-area: board;
+  letter-spacing: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2rem;
+}
+#hint {
+  font-size: 2.5rem;
+  grid-area: hint;
+  letter-spacing: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  text-align: center;
+  height: 80px;
+  padding: 2rem;
+  margin-top: auto;
+}
+#hangin-dude {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: img;
+  height: 200px;
+  width: 85%;
+  padding: 2rem;
+  min-height: 350px;
+}
+#hangin-dude img {
+  width: 90%;
+}
+#alphabet {
+  grid-area: alph;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(116, 126, 221);
+  padding: 5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+h1 {
+  width: 100%;
+}
+#timer {
+  grid-area: bot;
+  font-size: 2.5rem;
+  background-color: red;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+#footer {
+  font-size: 2.5rem;
+  grid-area: footer;
+  letter-spacing: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2rem;
+}
+#fh2 {
+  font-size: 35px;
+  color: red;
+}
+.letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+.letter:hover {
+  border: 2px solid white;
+  color: white;
+  box-shadow: 0px 0px 12px 0px black;
+}
+.btn {
+  margin-top: 3rem;
+  border: 2px solid black;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+.btn:hover {
+  box-shadow: 0px 0px 12px 0px white;
+  background-color: rgb(255, 255, 229);
+}
+@media screen and (max-width: 910px) {
+  #alphabet {
+    padding: 2rem;
+  }
+  .letter {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+@media screen and (max-width: 610px) {
+  #container {
+    grid-template-rows:
+      minmax(10rem, 1fr) minmax(10rem, 1fr) minmax(100px, 3fr) minmax(
+        100px,
+        3fr
+      )
+      minmax(6rem, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "hint"
+      "board"
+      "img"
+      "alph"
+      "bot"
+      "footer";
+  }
+
+  #hangin-dude img {
+    width: auto;
+    height: 100%;
+  }
+  #alphabet {
+    padding: 1.5rem;
+  }
+  .letter {
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+  #board {
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  h1 {
+    margin-top: 2rem;
+  }
+  .btn {
+    margin-top: 0.5rem;
+  }
+}
+@media screen and (max-width: 430px) {
+  .letter {
+    font-size: 1.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}

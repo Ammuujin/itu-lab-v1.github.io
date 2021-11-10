@@ -31,21 +31,43 @@
     <script>
         var x = window.prompt('Hed dugeer asuult we?');
         if(x==1){
-            const string = prompt('Neree oruulna uu: ');  
-            const value = validatePalin(string);
-            function validatePalin(str) {  
-            const len = string.length;  
-            for (let i = 0; i < len / 2; i++) {  
-                if (string[i] !== string[len - 1 - i || string.length<=1]) {  
-                window.alert("Ta yadaj 1 ees olon useg oruulaach");
-                alert( 'Tanii ner bol Palindrome bish baina');
-                break;
-        }  
-    }  
-    alert( 'Tanii ner bol Palindrome baina');  
-}  
+            function reverse( str )
+  {
+    // variable holds reverse string
+    let rev_str = "";
+    for( let i = str.length-1 ;i >= 0 ;i--)
+    {
+      rev_str+= str[i];
+    }
+    // return reverse string
+    return rev_str;
+  }
+ 
+  //  function checking string is palindrome or not
+  function is_palindrome( str )
+  {
+    reverse_str = reverse(str);
+    //  condition checking if reverse str is
+    // same as string it is palindrome
+    // else not a palindrome
+    if( reverse_str === str)
+    {
+      alert("Palindrome baina");
+    }
+    else
+    {
+        alert("Palindrome bish baina");
+    }
+  }
+  let name=window.prompt("Ta neree oruulna uu?")
+  if(name.length<=1){
+      alert("Ta yadaj 1 ees ih useg too oruulna uu");
+  }else {
+    is_palindrome(name)
+  }
         } else if (x==2){
-            var y = window.prompt('Toogoo oruulna uu?');
+            var y;
+            y = BigInt(window.prompt('Toogoo oruulna uu?'));
             var sum=0;
             while (y) {
                 sum += y % 10;
