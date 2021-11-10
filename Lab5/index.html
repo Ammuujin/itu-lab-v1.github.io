@@ -5,24 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratory 5</title>
-    <style type="text/css">
-    .morning {
-			background-color: green;
-			position: absolute;
-            height: 100px;
-            width: 100px;
-			top: 0;
-			left: 0;
-			right: auto;
+    <style>
+    .nogoon {
+        height: 100px;
+      width: 100px;
+      left: 10px;
+      top: 10px;
+      background-color: green;
+      position: absolute;
 		}
-    .night {
-			background-color: red;
-			position: absolute;
-            height: 100px;
-            width: 100px;
-			bottom: 0;
-			left: auto;
-			right: 0;
+    .ulaan {
+        height: 100px;
+      width: 100px;
+      right: 10px;
+      bottom: 10px;
+      background-color: red;
+      position: absolute;
 		}
     </style>
 </head>
@@ -32,27 +30,20 @@
         var x = window.prompt('Hed dugeer asuult we?');
         if(x==1){
             function reverse( str )
-  {
-    // variable holds reverse string
+    {
     let rev_str = "";
     for( let i = str.length-1 ;i >= 0 ;i--)
     {
-      rev_str+= str[i];
+    rev_str+= str[i];
     }
-    // return reverse string
     return rev_str;
-  }
- 
-  //  function checking string is palindrome or not
+    }
   function is_palindrome( str )
-  {
+    {
     reverse_str = reverse(str);
-    //  condition checking if reverse str is
-    // same as string it is palindrome
-    // else not a palindrome
     if( reverse_str === str)
     {
-      alert("Palindrome baina");
+    alert("Palindrome baina");
     }
     else
     {
@@ -66,25 +57,45 @@
     is_palindrome(name)
   }
         } else if (x==2){
-            var y;
-            y = BigInt(window.prompt('Toogoo oruulna uu?'));
+            var y ="";
+            y= window.prompt('Toogoo oruulna uu?');
             var sum=0;
-            while (y) {
+            if(y.length<17){
+                y=parseInt(y);
+                while (y) {
                 sum += y % 10;
                 y = Math.floor(y / 10);
+                }
+            }else{
+                var f="";
+                f=y.slice( 0, 15);
+                var l="";
+                l=y.slice(16, 16+(y.length-16));
+                f=parseInt(f);
+                l=parseInt(l);
+                var i=1;
+                var sum1=0,sum2=0;
+                while(i<=y.length){
+                    sum1+=f%10
+                    f=Math.floor(f/10);
+                    sum2+=l%10
+                    l=Math.floor(l/10);
+                    sum=sum1+sum2;
+                    i++;
+                }
             }
             window.alert("Tsifruudiin niilber bol="+ sum);
         } else if (x==3){
             var s = window.prompt('Ta zaig oruulna uu? Chono and Tuulai');
-            var tsag=0.0;
-            var min=0.0;
-            var sec=0.0;
-            tsag=((s/7).toFixed(2));
-            var tsag1=math.round(s/7);
-            min=math.round(60*((tsag-tsag1).toFixed(2)));
-            var min1=(60*((tsag-tsag1).toFixed(2)))-min;
-            sec=math.round((min1.toFixed(2))*60);
-            window.alert("Ta "+ tsag1+ " tsag "+min+ " minut "+sec+" secondiin daraa guitseh bolno.");
+            if(s==0){
+                windows.alert("Tuulai choniin hool bolwoo gej.");
+            }
+            var tsag=Math.round(s/7);
+            var min=Math.round(((s/7)*60)%60);
+            var sec=Math.round(((((s/7)*60)*60)%3600));
+            sec=sec.toString();
+            sec=sec.slice(0, 2);
+            window.alert("Ta "+ tsag+ " tsag "+min+ " minut "+sec+" secondiin daraa guitseh bolno.");
         } else if (x==4){
             var door=0;
             var dawkhar=0;
@@ -92,40 +103,57 @@
             if(z==0){
                 window.alert("Ta 0 ees ih too oruulah heregtei!");
             }
-            else if(0<z<=36){
-                dawkhar=Math.round(z/4);
-                door=z%4;
-                window.alert("ene ail manai bairnii 1 ortsnii "+dawkhar+" -n dawkhariin "+ door+ "-dah haalga.");    
-            }else if (36<z<=72){
+            else if(z<=36){
+                dawkhar=Math.ceil(z/4);
+                if(z<5){
+                    window.alert("ene ail manai bairnii 1 ortsnii "+dawkhar+" -n dawkhariin "+ z+ "-dah haalga.")
+                }else{
+                    if(z%4==0){
+                        z=4;
+                        door=z;
+                    }else {
+                        door=z%4;
+                    }
+                window.alert("ene ail manai bairnii 1 ortsnii "+dawkhar+" -n dawkhariin "+ door+ "-dah haalga."); }   
+            }else if (z>36 &&z<=72){
                 z=z-36;
-                dawkhar=Math.round(z/4);
-                door=z%4;
-                window.alert("ene ail manai bairnii 2 ortsnii "+dawkhar+" -n dawkhariin "+ door+ "-dah haalga.");
-            }else if(72<z<=108){
+                dawkhar=Math.ceil(z/4);
+                if(z<5){
+                    window.alert("ene ail manai bairnii 2 ortsnii "+dawkhar+" -n dawkhariin "+ z+ "-dah haalga.")
+                }else{
+                    if(z%4==0){
+                        z=4;
+                        door=z;
+                    }else {
+                        door=z%4;
+                    }
+                window.alert("ene ail manai bairnii 2 ortsnii "+dawkhar+" -n dawkhariin "+ door+ "-dah haalga."); }  
+            }else if(z>72&&z<=108){
                 z=z-72;
-                dawkhar=Math.round(z/4);
-                door=z%4;
-                window.alert("ene ail manai bairnii 3 ortsnii "+dawkhar+" -n dawkhariin "+ door+ "-dah haalga.");
-            }else {
+                dawkhar=Math.ceil(z/4);
+                if(z<5){
+                    window.alert("ene ail manai bairnii 3 ortsnii "+dawkhar+" -n dawkhariin "+ z+ "-dah haalga.")
+                }else{
+                    if(z%4==0){
+                        z=4;
+                        door=z;
+                    }else {
+                        door=z%4;
+                    }
+                window.alert("ene ail manai bairnii 3 ortsnii "+dawkhar+" -n dawkhariin "+ door+ "-dah haalga."); }  
+            }else{
                 window.alert("ene ail manai bairniih bish baina!");
             }
         } else if (x==5){
-            var d = new Date();
-		    var hour = d.getHours();
-            var container='';
-            if(hour<18 && hour>6){
-                alert(hour);
-			    container=container+'<div class="morning"></div>';
-            if(hour<12){
-                alert(hour);
-		document.getElementById('morning');
-            } else{
-                alert(hour);
-                container=container+'<div class="night"></div>';
-            } 
-            document.getElementById("durs").innerHTML=container;
-        }
-    }
+            var time = new Date();
+            var hour = time.getHours();
+            var container = '';
+            if (hour < 18 && hour>6)
+            container = container + '<div class="nogoon"></div>'
+            else
+            container = container + '<div class="ulaan"></div>'
+            document.getElementById("Durs").innerHTML = container;
+                }
     </script>
 </body>
 </html>

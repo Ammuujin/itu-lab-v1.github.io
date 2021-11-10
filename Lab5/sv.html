@@ -1,0 +1,38 @@
+<DOCTYPE! html>
+<html>
+<head>
+  <title> Color </title>
+  <style>
+    .nogoon {
+      height: 100px;
+      width: 100px;
+      left: 10px;
+      top: 10px;
+      background-color: green;
+      position: absolute;
+    }
+    .ulaan {
+      height: 100px;
+      width: 100px;
+      right: 10px;
+      bottom: 10px;
+      background-color: red;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div id="Durs"></div>
+  <script >
+    var time = new Date();
+    var hour = time.getHours();
+    var container = '';
+
+    if (hour < 18 && hour>6)
+      container = container + '<div class="nogoon"></div>'
+    else
+      container = container + '<div class="ulaan"></div>'
+    document.getElementById("Durs").innerHTML = container;
+  </script>
+</body>
+</html>
