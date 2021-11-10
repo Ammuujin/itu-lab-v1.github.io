@@ -10,6 +10,16 @@ const passwordBoard = [
   'Beach',
   'Money',
 ];
+const passwordBoardMn = [
+  'Аалз',
+  'Чинээлэг',
+  'Аймшгийн',
+  'Иштэй чихэр',
+  'Өшөө авагчид',
+  'Сахиусан тэнгэр',
+  'Далайн эрэг',
+  'Мөнгө',
+];
 const passwordDiv = document.querySelector('#board');
 const imgDiv = document.querySelector('#hangin-dude');
 const random = Math.floor(Math.random() * passwordBoard.length);
@@ -99,6 +109,16 @@ const finish = function (succes) {
     .querySelector('.btn')
     .addEventListener('click', () => location.reload());
 };
+const hint=function(hinty){
+  var k=0;
+  while(k<8){
+    if(random==passwordBoardMn[k]){
+      hint.innerHTML=`<h1>passwordBoardMn[k]</h1>`;
+    }else{
+      k++;
+    }
+  }
+}
 
 const timer = function () {
   const timer = document.querySelector('#timer');

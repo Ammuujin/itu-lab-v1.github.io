@@ -18,14 +18,14 @@ body {
 #container {
   display: grid;
   gap: 2rem;
-  grid-template-rows: minmax(5rem, 2fr) minmax(8rem, 2fr) 2fr minmax(7rem, 1fr);
+  /* grid-template-rows: minmax(6rem, 2fr) minmax(8rem, 2fr) 2fr minmax(7rem, 1fr); */
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "title title"
     "board board"
     "img alph"
+    "hint reset"
     "bot bot"
-    "hint hint"
     "footer footer";
   width: 90vw;
   max-width: 800px;
@@ -47,37 +47,70 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: red;
   text-transform: uppercase;
   text-align: center;
   padding: 2rem;
 }
-#hint {
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.hint {
   font-size: 2.5rem;
   grid-area: hint;
   letter-spacing: 0.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(255, 255, 255);
+  background-color: red;
   text-transform: uppercase;
   text-align: center;
-  height: 80px;
+  height: 70px;
+  width: auto;
   padding: 2rem;
   margin-top: auto;
+}
+.hint:hover {
+  border: 2px solid white;
+  color: white;
+  box-shadow: 0px 0px 12px 0px black;
+}
+.reset {
+  font-size: 2.5rem;
+  grid-area: hint;
+  letter-spacing: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  text-transform: uppercase;
+  text-align: center;
+  height: 70px;
+  width: auto;
+  padding: 2rem;
+  margin-top: auto;
+}
+.reset:hover {
+  border: 2px solid white;
+  color: white;
+  box-shadow: 0px 0px 12px 0px black;
 }
 #hangin-dude {
   display: flex;
   align-items: center;
   justify-content: center;
   grid-area: img;
+  background-color: red;
   height: 200px;
-  width: 85%;
+  width: 100%;
   padding: 2rem;
-  min-height: 350px;
+  min-height: 400px;
 }
 #hangin-dude img {
-  width: 90%;
+  height: 100%;
+  width: auto;
 }
 #alphabet {
   grid-area: alph;
@@ -85,7 +118,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  background-color: rgb(116, 126, 221);
+  background-color: red;
   padding: 5rem;
   text-transform: uppercase;
   text-align: center;
@@ -123,7 +156,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid white;
+  border: 1px solid black;
   width: 4rem;
   height: 4rem;
   margin: 0.5rem;
@@ -142,7 +175,7 @@ h1 {
 }
 .btn:hover {
   box-shadow: 0px 0px 12px 0px white;
-  background-color: rgb(255, 255, 229);
+  background-color: rgba(150, 5, 37, 0.782);
 }
 @media screen and (max-width: 910px) {
   #alphabet {
