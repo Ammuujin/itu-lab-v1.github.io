@@ -141,7 +141,7 @@ hintButton.addEventListener('click', hinty, false);
 const liveDiv=document.querySelector('#live');
 const liveC =function(){
   let count =6;
-  liveDiv.textContent="Lives: "+ (count-fail);
+  liveDiv.textContent="Lives: "+ (count-1);
 }
 liveC();
 const timer = function () {
