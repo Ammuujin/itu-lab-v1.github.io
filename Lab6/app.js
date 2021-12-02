@@ -1,33 +1,55 @@
 let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const alphabet = document.getElementById('alphabet');
+const splash=document.querySelector('.splash');
+document.addEventListener('DOMContentLoaded', (e)=>{
+  setTimeout(()=>{
+    splash.classList.add('display-none')
+  }, 4000);
+})
 const passwordBoard = [
-  'Spider',
-  'Wealthy',
-  'Horror',
-  'Lolipop',
-  'Avengers',
-  'Angel',
-  'Beach',
-  'Money',
+  'Afghanistan',
+  'Armenia',
+  'Azerbaijan',
+  'Bahrain',
+  'Bangladesh',
+  'China',
+  'Indonesia',
+  'Iran',
+  'Vietnam',
+  'Turkey',
+  'Syria',
+  'Taiwan',
+  'Singapore',
+  'Philippines',
+  'Pakistan',
+  'Nepal',
+  'Mongolia',
+  'Korea'
 ];
 const passwordBoardMn = [
-  'Аалз',
-  'Чинээлэг',
-  'Аймшгийн',
-  'Иштэй чихэр',
-  'Өшөө авагчид',
-  'Сахиусан тэнгэр',
-  'Далайн эрэг',
-  'Мөнгө',
+  'Kabul',
+  'Yerevan',
+  'Baku',
+  'Manama',
+  'Dhaka',
+  'Beijing',
+  'Jakarta',
+  'Tehran',
+  'Hanoi',
+  'Ankara',
+  'Damascus',
+  'Taipei',
+  'Singapore',
+  'Manila',
+  'Islamabad',
+  'Kathmandu',
+  'Ulaanbaatar',
+  'Seoul'
 ];
 const passwordDiv = document.querySelector('#board');
 const imgDiv = document.querySelector('#hangin-dude');
 const random = Math.floor(Math.random() * passwordBoard.length);
 const password = passwordBoard[random];
-const yes = new Audio('yes.wav');
-const no = new Audio('no.wav');
-const win = new Audio('nice-work.wav');
-const lose = new Audio('oh-my-god-1.wav');
 let fail = 1;
 let countDown;
 
@@ -51,13 +73,12 @@ const showPassword = function () {
   passwordDiv.innerHTML = passwordDashed.join('');
 };
 const showHangman = function (nr) {
-  imgDiv.innerHTML = `<img id="img" src="img/${nr}.jpg" alt="" />`;
+  imgDiv.innerHTML = `<img id="img" src="img/${nr}.svg" alt="" />`;
 };
 
 const checkForLetter = function (e) {
   if (e.target.classList.contains('letter')) {
     if (password.toUpperCase().split('').includes(e.target.textContent)) {
-      yes.play();
       password
         .toUpperCase()
         .split('')
@@ -70,8 +91,8 @@ const checkForLetter = function (e) {
 
       deactivateLetter(true, e.target);
     } else {
-      no.play();
       fail++;
+      liveC();
       showHangman(fail);
       deactivateLetter(false, e.target);
     }
@@ -94,32 +115,35 @@ const deactivateLetter = function (hit, letter, audio) {
   letter.style.color = 'white';
   letter.style.cursor = 'default';
 };
-
+  // document.getElementById("reset").addEventListener("click",finish());
 const finish = function (succes) {
   if (succes) {
-    alphabet.innerHTML = `<h1>NICE WORK!</h1><div class='btn'>PLAY AGAIN</div>`;
-    win.play();
+    alphabet.innerHTML = `<h1>BRAVO!</h1><div class='btn'>PLAY AGAIN</div>`;
     clearInterval(countDown);
   } else {
     alphabet.innerHTML = `<h1>YOU LOSER!</h1><div class='btn'>PLAY AGAIN</div>`;
-    lose.play();
     clearInterval(countDown);
   }
   document
     .querySelector('.btn')
     .addEventListener('click', () => location.reload());
 };
-const hint=function(hinty){
-  var k=0;
-  while(k<8){
-    if(random==passwordBoardMn[k]){
-      hint.innerHTML=`<h1>passwordBoardMn[k]</h1>`;
-    }else{
-      k++;
-    }
+const hintButton=document.querySelector('.hint');
+function hinty(){
+  let answer=window.confirm("Hint ashiglahad live -1 bolno shuu!");
+  if(answer){
+    alert("Capital: "+passwordBoardMn[random]);
+  fail++;
+  liveC();
   }
 }
-
+hintButton.addEventListener('click', hinty, false);
+const liveDiv=document.querySelector('#live');
+const liveC =function(){
+  let count =6;
+  liveDiv.textContent="Lives: "+ (count-fail);
+}
+liveC();
 const timer = function () {
   const timer = document.querySelector('#timer');
   let time = new Date(90000);
@@ -133,6 +157,8 @@ const timer = function () {
     if (time == 0) {
       finish(false);
       clearInterval(countDown);
+      liveDiv.textContent="LIVES: 0";
+      imgDiv.innerHTML = `<img id="img" src="img/${6}.svg" alt="" />`;
     }
   };
   tick();

@@ -15,14 +15,49 @@ body {
   align-items: center;
   justify-content: center;
 }
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  z-index: 200;
+  color: red;
+  text-align: center;
+  line-height: 90vh;
+}
+.splash.display-none {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  z-index: -10;
+  color: red;
+  text-align: center;
+  line-height: 90vh;
+  transition: all 0.5s;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
 #container {
   display: grid;
   gap: 2rem;
-  /* grid-template-rows: minmax(6rem, 2fr) minmax(8rem, 2fr) 2fr minmax(7rem, 1fr); */
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "title title"
     "board board"
+    "live live"
     "img alph"
     "hint reset"
     "bot bot"
@@ -57,6 +92,18 @@ body {
   flex-direction: row;
   justify-content: space-around;
 }
+#live {
+  font-size: 2.5rem;
+  grid-area: live;
+  letter-spacing: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2rem;
+}
 .hint {
   font-size: 2.5rem;
   grid-area: hint;
@@ -68,9 +115,8 @@ body {
   text-transform: uppercase;
   text-align: center;
   height: 70px;
-  width: auto;
+  width: 100%;
   padding: 2rem;
-  margin-top: auto;
 }
 .hint:hover {
   border: 2px solid white;
@@ -88,9 +134,8 @@ body {
   text-transform: uppercase;
   text-align: center;
   height: 70px;
-  width: auto;
+  width: 100%;
   padding: 2rem;
-  margin-top: auto;
 }
 .reset:hover {
   border: 2px solid white;
@@ -103,14 +148,14 @@ body {
   justify-content: center;
   grid-area: img;
   background-color: red;
-  height: 200px;
+  height: auto;
   width: 100%;
   padding: 2rem;
   min-height: 400px;
 }
 #hangin-dude img {
   height: 100%;
-  width: auto;
+  width: 100%;
 }
 #alphabet {
   grid-area: alph;
@@ -177,9 +222,12 @@ h1 {
   box-shadow: 0px 0px 12px 0px white;
   background-color: rgba(150, 5, 37, 0.782);
 }
-@media screen and (max-width: 910px) {
+@media only screen and (max-width: 910px) {
   #alphabet {
     padding: 2rem;
+  }
+  .splash {
+    display: none;
   }
   .letter {
     font-size: 2rem;
@@ -187,7 +235,7 @@ h1 {
     height: 3rem;
   }
 }
-@media screen and (max-width: 610px) {
+@media only screen and (max-width: 768px) {
   #container {
     grid-template-rows:
       minmax(10rem, 1fr) minmax(10rem, 1fr) minmax(100px, 3fr) minmax(
@@ -198,17 +246,22 @@ h1 {
     grid-template-columns: 1fr;
     grid-template-areas:
       "title"
-      "hint"
       "board"
+      "live"
       "img"
       "alph"
+      "hint"
+      "reset"
       "bot"
       "footer";
   }
+  .splash {
+    display: none;
+  }
 
   #hangin-dude img {
-    width: auto;
-    height: 100%;
+    width: 250px;
+    height: auto;
   }
   #alphabet {
     padding: 1.5rem;
@@ -229,12 +282,5 @@ h1 {
   }
   .btn {
     margin-top: 0.5rem;
-  }
-}
-@media screen and (max-width: 430px) {
-  .letter {
-    font-size: 1.5rem;
-    height: 2.5rem;
-    width: 2.5rem;
   }
 }
