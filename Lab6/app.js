@@ -4,7 +4,7 @@ const splash=document.querySelector('.splash');
 document.addEventListener('DOMContentLoaded', (e)=>{
   setTimeout(()=>{
     splash.classList.add('display-none')
-  }, 4000);
+  }, 1000);
 })
 const passwordBoard = [
   'Afghanistan',
@@ -130,18 +130,25 @@ const finish = function (succes) {
 };
 const hintButton=document.querySelector('.hint');
 function hinty(){
-  let answer=window.confirm("Hint ashiglahad live -1 bolno shuu!");
+  if(v<2){
+    alert("ta hint ashiglah bolomjgui baina.")
+  }else{
+    let answer=window.confirm("Hint ashiglahad live -1 bolno shuu!");
   if(answer){
     alert("Capital: "+passwordBoardMn[random]);
   fail++;
   liveC();
   }
+  }
 }
+let v=0;
 hintButton.addEventListener('click', hinty, false);
 const liveDiv=document.querySelector('#live');
 const liveC =function(){
   let count =6;
-  liveDiv.textContent="Lives: "+ (count-fail);
+  let b=count-fail;
+  v=b;
+  liveDiv.textContent="Lives: "+ b;
 }
 liveC();
 const timer = function () {
